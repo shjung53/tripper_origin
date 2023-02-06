@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.tripper.tripper.ui.main.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/home_logo_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tripper"
+            android:fontFamily="@font/godo_b_400"
+            android:textSize="24sp"
+            android:textColor="@color/main"
+            android:layout_marginTop="@dimen/margin_15dp"
+            android:layout_marginStart="@dimen/margin_20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/home_logo_icon_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_logo_icon"
+            android:layout_marginEnd="@dimen/margin_10dp"
+            android:layout_marginTop="@dimen/margin_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/home_search_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="@dimen/margin_20dp"-->
+<!--            android:layout_marginEnd="@dimen/margin_20dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/home_logo_tv"-->
+<!--            android:background="@drawable/round_shadow_button"-->
+<!--            >-->
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/home_search_et"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:layout_marginEnd="30dp"-->
+<!--                android:background="@color/transparent"-->
+<!--                android:fontFamily="@font/nanumbarungothic_300"-->
+<!--                android:hint="여행 지역 / 해시태그 검색"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/textColor"-->
+<!--                android:textColorHint="@color/textColor"-->
+<!--                android:textCursorDrawable="@drawable/cursor_drawable"-->
+<!--                android:textSize="@dimen/text_16sp"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/home_search_iv"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:layout_marginEnd="@dimen/margin_15dp"-->
+<!--                android:contentDescription="TODO"-->
+<!--                android:src="@drawable/ic_search_25dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/home_search_et"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+        
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/home_menu_tl"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/home_logo_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tabIndicatorHeight="2dp"
+            app:tabIndicator="@drawable/tab_indicator_round"
+            app:tabIndicatorColor="@color/main"
+            app:tabSelectedTextColor="@color/lightBlack"
+            app:tabTextColor="@color/darkGray"
+            android:background="@drawable/tab_indicator_round_unselect"
+            app:tabTextAppearance="@style/Widget.tablayout_font"
+            app:tabRippleColor="@null"/> //터치효과 없애기
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/home_menu_vp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/home_menu_tl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

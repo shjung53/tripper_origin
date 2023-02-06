@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ex"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <com.lriccardo.timelineview.TimelineView
+        android:id="@+id/item_post_list_category_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_15dp"
+        android:visibility="visible"
+        app:indicator_drawable="@drawable/ic_food_merge"
+        app:indicator_size="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:line_color="@color/lightBlack"
+        app:line_dash_gap="2dp"
+        app:line_dash_length="2dp"
+        app:line_style="dashed"
+        app:line_width="1dp"
+        app:timeline_item_type="first" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/post_list_rv_close_constraint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ex"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/item_post_list_cv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="@dimen/margin_10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="@dimen/margin_15dp"
+            android:clipToPadding="false"
+            android:elevation="10dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/item_post_list_line_v"
+                android:layout_width="2.5dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:background="@color/food_background" />
+
+            <TextView
+                android:id="@+id/item_post_list_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nanumbarungothic_400"
+                android:gravity="center"
+                android:text="모여 칼국수"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18sp" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    //오픈 형태
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/post_list_rv_open_constraint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ex"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/item_post_list_open_cv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/margin_10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="@dimen/margin_15dp"
+            android:clipToPadding="false"
+            android:elevation="15dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="0.95"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/post_list_open_cv_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/item_post_list_open_line_v"
+                    android:layout_width="2.5dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:background="@color/food_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_post_list_open_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nanumbarungothic_400"
+                    android:gravity="center"
+                    android:text="모여 칼국수"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/item_post_list_open_line_v"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/item_post_list_open_line_v"
+                    app:layout_constraintTop_toTopOf="@id/item_post_list_open_line_v" />
+
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/item_post_list_open_review_image_rv"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_marginTop="@dimen/margin_15dp"-->
+<!--                    android:clipToPadding="false"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:overScrollMode="never"-->
+<!--                    android:paddingStart="17.5dp"-->
+<!--                    android:paddingEnd="10dp"-->
+<!--                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                    app:layout_constraintBottom_toTopOf="@id/item_post_list_open_review_tv"-->
+<!--                    app:layout_constraintDimensionRatio="1.97"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="1.0"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/item_post_list_open_tv"-->
+<!--                    tools:listitem="@layout/item_post_list_review_img" -->
+<!--                    />-->
+
+                <ImageView
+                    android:id="@+id/item_post_list_open_review_image_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/margin_15dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    android:paddingStart="17.5dp"
+                    android:paddingEnd="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toTopOf="@id/item_post_list_open_review_tv"
+                    app:layout_constraintDimensionRatio="1.97"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_post_list_open_tv"
+                    />
+
+                <TextView
+                    android:id="@+id/item_post_list_open_review_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_15dp"
+                    android:layout_marginStart="@dimen/margin_20dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/nanumbarungothic_400"
+                    android:lines="2"
+                    android:text="아 배고프다 내일 과외 갈 수 있을까 내일은 어디 카페가서 코딩을하지 이 멀티뷰 안되기만 해봐 울거야 빨리 이 페이지 오늘 안에 해결하고싶다^^"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="@dimen/text_16sp"
+                    app:layout_constraintEnd_toEndOf="@id/item_post_list_open_review_image_iv"
+                    app:layout_constraintStart_toStartOf="@id/item_post_list_open_review_image_iv"
+                    app:layout_constraintTop_toBottomOf="@id/item_post_list_open_review_image_iv" />
+
+                <View
+                    android:id="@+id/item_post_list_open_review_view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/gray"
+                    app:layout_constraintEnd_toEndOf="@id/item_post_list_open_review_image_iv"
+                    app:layout_constraintStart_toStartOf="@id/item_post_list_open_review_image_iv"
+                    app:layout_constraintTop_toBottomOf="@id/item_post_list_open_review_tv" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/item_post_upBtn_constraint"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="50dp"
+                    android:layout_marginVertical="@dimen/margin_10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_post_list_open_review_view">
+
+
+                    <ImageView
+                        android:id="@+id/item_post_list_open_review_close_btn_iv"
+                        android:layout_width="25dp"
+                        android:layout_height="0dp"
+                        android:src="@drawable/ic_close_up"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

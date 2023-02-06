@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+<!--    상단 앱바-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appBar_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="프로필 설정"
+            android:fontFamily="@font/nanumbarungothic_400"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_20sp"
+            android:gravity="center"
+            />
+    </androidx.cardview.widget.CardView>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_setting_picture_civ"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_empty_profile"
+            app:civ_circle_background_color="@color/lightGray"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.2"/>
+
+
+<!--    닉네임 수정-->
+    <EditText
+        android:id="@+id/profile_setting_nickname_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="닉네임 (최대 10글자)"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_20sp"
+        android:textColor="@color/lightBlack"
+        android:fontFamily="@font/nanumbarungothic_400"
+        android:textColorHint="@color/darkGray"
+        android:maxLength="10"
+        app:layout_constraintTop_toBottomOf="@id/profile_setting_picture_civ"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/profile_setting_duplication_check_off_tv"
+        android:layout_marginHorizontal="@dimen/margin_30dp"
+        android:background="@null"
+        android:layout_marginTop="@dimen/margin_25dp"
+        />
+
+    <TextView
+        android:id="@+id/profile_setting_duplication_check_off_tv"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:text="중복확인"
+        android:fontFamily="@font/nanumbarungothic_400"
+        android:textColor="@color/white"
+        android:background="@drawable/duplication_check_off"
+        app:layout_constraintTop_toTopOf="@id/profile_setting_nickname_et"
+        app:layout_constraintBottom_toBottomOf="@id/profile_setting_nickname_et"
+        app:layout_constraintEnd_toEndOf="@id/profile_setting_line_v"
+        android:gravity="center"
+        app:layout_constraintHorizontal_bias="1"
+        />
+
+    <TextView
+        android:id="@+id/profile_setting_duplication_check_on_tv"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:text="중복확인"
+        android:fontFamily="@font/nanumbarungothic_400"
+        android:textColor="@color/white"
+        android:background="@drawable/duplication_check_on"
+        app:layout_constraintTop_toTopOf="@id/profile_setting_nickname_et"
+        app:layout_constraintBottom_toBottomOf="@id/profile_setting_nickname_et"
+        app:layout_constraintEnd_toEndOf="@id/profile_setting_line_v"
+        android:gravity="center"
+        app:layout_constraintHorizontal_bias="1"
+        android:visibility="gone"
+        />
+
+    <View
+        android:id="@+id/profile_setting_line_v"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/line"
+        android:backgroundTint="@color/main"
+        app:layout_constraintTop_toBottomOf="@id/profile_setting_nickname_et"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="8dp"
+        />
+
+
+    <TextView
+        android:id="@+id/profile_setting_error_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="중복된 닉네임입니다!"
+        android:fontFamily="@font/nanumbarungothic_400"
+        android:textSize="@dimen/text_12sp"
+        android:textColor="@color/red"
+        app:layout_constraintTop_toBottomOf="@id/profile_setting_line_v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/profile_setting_possible_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="사용가능한 닉네임입니다."
+        android:fontFamily="@font/nanumbarungothic_400"
+        android:textSize="@dimen/text_12sp"
+        android:textColor="@color/lightBlack"
+        app:layout_constraintTop_toBottomOf="@id/profile_setting_line_v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="트리퍼에서 다양한 여행객들과 소통할 프로필을 만들어주세요."
+        android:fontFamily="@font/nanumbarungothic_400"
+        android:textSize="@dimen/text_12sp"
+        android:textColor="@color/darkGray"
+        app:layout_constraintTop_toBottomOf="@id/profile_setting_line_v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        />
+
+<!--    하단 탭 버튼-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_setting_complete_cv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_tab_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardBackgroundColor="@color/gray"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="완료"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nanumbarungothic_400"
+            android:textSize="@dimen/text_20sp"
+            android:gravity="center"
+            />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

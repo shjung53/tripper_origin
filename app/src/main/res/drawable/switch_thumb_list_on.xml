@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item android:bottom="1dp"
+            android:drawable="@drawable/ic_swithch_btn_on"
+            android:left="1dp"
+            android:right="1dp"
+            android:state_checked="true"
+            android:top="1dp" />
+
+</layer-list>

@@ -1,0 +1,52 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Tripper" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/main</item>
+        <item name="colorSecondaryVariant">@color/main</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="windowNoTitle">true</item> //앱바 삭제
+        <item name="android:windowTranslucentStatus">true</item> //상태창 투명
+        <item name="android:fitsSystemWindows">true</item> //상태창에 컨텐츠 안가리게
+    </style>
+
+
+    <style name="NewDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="CalendarStyle" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="title_color">@color/lightBlack</item>
+        <item name="week_color">@color/darkGray</item>
+        <item name="range_color">@color/main_20</item>
+        <item name="selected_date_circle_color">@color/main</item>
+        <item name="selected_date_color">@color/white</item>
+        <item name="default_date_color">@color/lightBlack</item>
+        <item name="range_date_color">@color/white</item>
+        <item name="text_size_title">@dimen/text_24sp</item>
+        <item name="text_size_week">@dimen/text_16sp</item>
+        <item name="text_size_date">@dimen/text_16sp</item>
+        <item name="disable_date_color">@color/red</item>
+        <item name="android:colorPrimary">@color/main</item>
+        <item name="date_selection_mode">free_range</item>
+        <item name="weekendDays">sunday</item>
+        <item name="weekendDayTextColor">@color/red</item>
+        <item name="android:datePickerMode">calendar</item>
+    </style>
+
+
+</resources>

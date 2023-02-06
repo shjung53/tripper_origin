@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tripper.tripper">
+    <!-- 파일에 읽기 퍼미션 설정 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 인터넷 사용 퍼미션 설정 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <application
+        android:name="com.tripper.tripper.ui.login.GlobalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Tripper"
+        android:usesCleartextTraffic="true">
+
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value=""/>
+
+        <activity
+            android:name="com.tripper.tripper.ui.main.feed.post.PostActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity
+            android:name="com.tripper.tripper.ui.main.myInfo.followList.FollowerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity
+            android:name="com.tripper.tripper.ui.main.myInfo.followList.FollowingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity
+            android:name="com.tripper.tripper.ui.login.ProfileSettingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="oauth"
+                    android:scheme="8b4db2cdbe569d851ed5355957ac66d9" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tripper.tripper.ui.main.schedule.addPlace.AddPlaceActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity
+            android:name="com.tripper.tripper.ui.login.LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity
+            android:name="com.tripper.tripper.ui.splash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Tripper"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tripper.tripper.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity
+            android:name="com.tripper.tripper.ui.main.schedule.CalendarActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity
+            android:name="com.tripper.tripper.ui.main.schedule.ScheduleActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity
+            android:name="com.tripper.tripper.ui.main.schedule.ReviewPlaceActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity
+            android:name="com.tripper.tripper.ui.setting.SettingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity
+            android:name="com.tripper.tripper.ui.setting.AccountActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity android:name="com.tripper.tripper.ui.main.feed.CommentActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity android:name="com.tripper.tripper.ui.main.feed.post.ReviewContentActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity android:name="com.tripper.tripper.ui.main.map.MapActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity android:name="com.tripper.tripper.ui.setting.ProfileEditActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity android:name="com.tripper.tripper.ui.main.feed.LikeListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tripper"
+            />
+        <activity android:name="com.tripper.tripper.ui.main.feed.userProfile.UserProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tripper"
+            />
+    </application>
+
+</manifest>

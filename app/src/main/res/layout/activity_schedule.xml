@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.main.schedule.ScheduleActivity"
+    >
+
+<!--    상단 앱바-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/schedule_appBar_cv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appBar_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/schedule_back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_25dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_20dp"
+            />
+        <TextView
+            android:id="@+id/schedule_appBar_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="여행 기록하기"
+            android:fontFamily="@font/nanumbarungothic_400"
+            android:textSize="@dimen/text_20sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@+id/schedule_complete_tv"
+            android:layout_width="35dp"
+            android:layout_height="@dimen/small_button"
+            android:text="완료"
+            android:fontFamily="@font/nanumbarungothic_b_600"
+            android:textSize="@dimen/text_18sp"
+            android:textColor="@color/gray"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/margin_15dp"
+            android:enabled="false"
+            />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/schedule_appBar_cv"
+        app:layout_constraintVertical_bias="0.0"
+        android:descendantFocusability="blocksDescendants"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--    여행 정보-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedule_transport_cv"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/transport_button"
+                android:layout_marginStart="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                app:cardCornerRadius="@dimen/transport_radius"
+                app:cardElevation="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="5dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/schedule_transport_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="3dp"
+                        android:src="@drawable/ic_car_19dp" />
+
+                    <TextView
+                        android:id="@+id/schedule_transport_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginEnd="3dp"
+                        android:fontFamily="@font/nanumbarungothic_l_300"
+                        android:text="자차로 여행"
+                        android:maxLines="1"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/text_12sp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/schedule_date_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:fontFamily="@font/nanumbarungothic_400"
+                android:text="2021.12.14~2021.12.17"
+                android:textColor="@color/lightBlack"
+                android:textSize="@dimen/text_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/schedule_transport_cv" />
+
+            <View
+                android:id="@+id/schedule_line_v"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/line"
+                android:layout_marginHorizontal="@dimen/margin_20dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/schedule_date_tv" />
+
+            <TextView
+                android:id="@+id/schedule_guide_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여행 제목이나 해시태그에 여행지를 꼭 알려주세요"
+                android:fontFamily="@font/nanumbarungothic_400"
+                android:textSize="@dimen/text_12sp"
+                android:textColor="@color/main"
+                android:layout_marginTop="@dimen/margin_20dp"
+                app:layout_constraintTop_toBottomOf="@id/schedule_line_v"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <!--    여행 제목, 해시태그-->
+            <EditText
+                android:id="@+id/schedule_feed_title_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:fontFamily="@font/nanumbarungothic_400"
+                android:hint="여행 제목"
+                android:inputType="textNoSuggestions"
+                android:paddingBottom="@dimen/edittext_underline_padding_bottom"
+                android:textColor="@color/lightBlack"
+                android:textColorHint="@color/darkGray"
+                android:textCursorDrawable="@drawable/cursor_drawable"
+                android:textSize="@dimen/text_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/schedule_guide_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:singleLine="true"
+                />
+
+            <EditText
+                android:id="@+id/schedule_feed_hashtag_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:fontFamily="@font/nanumbarungothic_400"
+                android:hint="해시태그 (선택)"
+                android:inputType="textNoSuggestions"
+                android:textColor="@color/lightBlack"
+                android:textColorHint="@color/darkGray"
+                android:textCursorDrawable="@drawable/cursor_drawable"
+                android:textSize="@dimen/text_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/schedule_feed_title_et"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingBottom="@dimen/edittext_underline_padding_bottom"
+                android:singleLine="true"
+                android:maxLength="20"
+                />
+
+            <!--    썸네일 추가-->
+            <TextView
+                android:id="@+id/schedule_add_thumbnail_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:fontFamily="@font/nanumbarungothic_400"
+                android:text="썸네일 사진을 추가해 주세요"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/text_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/schedule_feed_hashtag_et" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/schedule_add_thumbnail_cl"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/border_stroke"
+                app:layout_constraintTop_toBottomOf="@id/schedule_add_thumbnail_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="@dimen/margin_30dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_gallery_16dp"
+                    />
+                    <TextView
+                        android:id="@+id/schedule_thumbnail_num_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0/5"
+                        android:gravity="center"
+                        android:fontFamily="@font/nanumbarungothic_400"
+                        android:textSize="8sp"
+                        android:textColor="@color/darkGray"
+                        android:layout_marginTop="5dp"
+                        />
+
+            </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/schedule_thumbnail_rv"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:layout_marginStart="@dimen/margin_20dp"
+                android:layout_marginEnd="@dimen/margin_20dp"
+                app:layout_constraintTop_toBottomOf="@id/schedule_add_thumbnail_tv"
+                app:layout_constraintStart_toEndOf="@id/schedule_add_thumbnail_cl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_review_place_img"
+                />
+
+
+
+
+            <!--    여행 소개글 작성-->
+            <EditText
+                android:id="@+id/schedule_feed_introduce_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:fontFamily="@font/nanumbarungothic_400"
+                android:hint="여행 소개를 작성해주세요"
+                android:inputType="textMultiLine|textNoSuggestions|textWebEditText|textLongMessage"
+                android:paddingBottom="@dimen/edittext_underline_padding_bottom"
+                android:textColor="@color/lightBlack"
+                android:textColorHint="@color/darkGray"
+                android:textCursorDrawable="@drawable/cursor_drawable"
+                android:textSize="@dimen/text_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/schedule_thumbnail_rv"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:maxLines="8"
+                android:ellipsize="end"
+                />
+
+            <!--    일정 슬라이드-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/schedule_date_rv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/schedule_feed_introduce_et"
+                tools:listitem="@layout/item_schedule_date" />
+
+            <!--    일정 리스트-->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/schedule_list_vp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/schedule_date_rv"
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                android:nestedScrollingEnabled="false"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

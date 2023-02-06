@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.feed.userProfile.UserProfileActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/user_profile_top_bar_cv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_45dp"
+            android:elevation="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/user_profile_back_iv"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_20dp"
+                android:src="@drawable/ic_back_25dp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_profile_profile_image_iv"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.2"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1"
+            android:layout_marginVertical="5dp"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="@dimen/margin_20dp"
+            android:src="@drawable/ic_empty_profile"
+            app:civ_circle_background_color="@color/lightGray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_profile_top_bar_cv" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/user_profile_nickname_follow_tv_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_15dp"
+            app:layout_constraintBottom_toBottomOf="@id/user_profile_profile_image_iv"
+            app:layout_constraintStart_toEndOf="@id/user_profile_profile_image_iv"
+            app:layout_constraintEnd_toStartOf="@id/user_profile_following_btn"
+            app:layout_constraintTop_toTopOf="@id/user_profile_profile_image_iv">
+
+            <TextView
+                android:id="@+id/user_profile_nickname_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumbarungothic_400"
+                android:text="닉네임"
+                android:textColor="@color/lightBlack"
+                android:textSize="@dimen/text_16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_profile_following_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nanumbarungothic_400"
+                android:paddingHorizontal="6dp"
+                android:text="팔로잉   28"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/text_12sp"
+                app:layout_constraintBottom_toBottomOf="@id/user_profile_nickname_follow_tv_layout"
+                app:layout_constraintStart_toStartOf="@id/user_profile_nickname_tv"
+                app:layout_constraintTop_toBottomOf="@+id/user_profile_nickname_tv" />
+
+            <View
+                android:id="@+id/user_profile_follow_tv_bar"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toBottomOf="@id/user_profile_following_tv"
+                app:layout_constraintStart_toEndOf="@id/user_profile_following_tv"
+                app:layout_constraintTop_toTopOf="@id/user_profile_following_tv" />
+
+
+            <TextView
+                android:id="@+id/user_profile_follower_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumbarungothic_400"
+                android:paddingHorizontal="6dp"
+                android:text="팔로워   22"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/text_12sp"
+                app:layout_constraintStart_toEndOf="@id/user_profile_follow_tv_bar"
+                app:layout_constraintTop_toTopOf="@id/user_profile_following_tv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:visibility="visible"
+            android:id="@+id/user_profile_following_btn"
+            android:layout_width="40dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_following_btn"
+            app:layout_constraintStart_toEndOf="@id/user_profile_nickname_follow_tv_layout"
+            app:layout_constraintTop_toTopOf="@id/user_profile_nickname_follow_tv_layout"
+            app:layout_constraintBottom_toBottomOf="@id/user_profile_nickname_follow_tv_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/margin_20dp" />
+
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/user_profile_follow_btn"
+            android:layout_width="40dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_follow_btn"
+            app:layout_constraintStart_toEndOf="@id/user_profile_nickname_follow_tv_layout"
+            app:layout_constraintTop_toTopOf="@id/user_profile_nickname_follow_tv_layout"
+            app:layout_constraintBottom_toBottomOf="@id/user_profile_nickname_follow_tv_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/margin_20dp" />
+
+        <View
+            android:id="@+id/user_profile_line_view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/darkGray"
+            app:layout_constraintTop_toBottomOf="@id/user_profile_profile_image_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="@dimen/margin_20dp"
+            android:layout_marginTop="@dimen/margin_20dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_profile_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_profile_line_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/margin_10dp"
+            tools:listitem="@layout/item_user_profile"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_symbol_25dp"
+        android:enabled="true"
+        android:title="@string/feed"
+        app:showAsAction="always"
+       />
+    <item
+        android:id="@+id/mapActivity"
+        android:icon="@drawable/ic_map_27dp"
+        android:enabled="true"
+        android:title="@string/map_search"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/calendarActivity"
+        android:icon="@drawable/ic_pencil_25dp"
+        android:enabled="true"
+        android:title="@string/write_trip"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/myInfoFragment"
+        android:icon="@drawable/ic_user_21dp"
+        android:enabled="true"
+        android:title="@string/my_profile"
+        app:showAsAction="always"
+        />
+</menu>
